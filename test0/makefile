@@ -5,4 +5,4 @@ SRCS = src/*
 OUT = out
 
 all: $(SRCS)
-	$(CXX) $(CFLAGS) $(SRCS) -o $(OUT)
+	$(CXX) $(LDFLAGS) $(CFLAGS) $(SRCS) -o $(OUT)
