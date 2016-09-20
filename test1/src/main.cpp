@@ -15,7 +15,7 @@ int main() {
 		cout << "Sorry, camera not found" << endl;
 		return 1;
 		}
-	videoStream.set(CV_CAP_PROP_FRAME_WIDTH, 400);
+	videoStream.set(CV_CAP_PROP_FRAME_WIDTH, 320);
 	videoStream.set(CV_CAP_PROP_FRAME_HEIGHT, 240);
 		
 	// MAIN LOOP
