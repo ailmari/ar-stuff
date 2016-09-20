@@ -10,8 +10,8 @@ class Timer {
 		void reset();
 		void update();
 		
-		float getDelta();
-		float getTotal();
+		float getDelta() const;
+		float getTotal() const;
 		
 	private:
 		clock_t t;
