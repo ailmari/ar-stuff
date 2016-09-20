@@ -17,7 +17,7 @@ int main() {
 	while (true) {
 		Mat rawBGR;
 		videostream.read(rawBGR);
-		imshow("test"), rawBGR);
+		imshow("test0", rawBGR);
 
 		if (waitKey(10) == 27) {
 			break;
