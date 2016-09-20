@@ -47,7 +47,7 @@ int main() {
 		
 		// Preprocess
 		cvtColor(bgr, gray, CV_BGR2GRAY);
-		cvThreshold(gray, dst, 0, 255, CV_THRESH_BINARY | CV_THRESH_OTSU);
+		threshold(gray, dst, 0, 255, CV_THRESH_BINARY | CV_THRESH_OTSU);
 		timer.update();
 		preProcesses[frameCounter] = timer.getDelta();
 		
