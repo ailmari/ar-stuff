@@ -1,3 +1,5 @@
+#include "timer.h"
+
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <iostream>
@@ -14,13 +16,18 @@ int main() {
 		cout << "Sorry, camera not found" << endl;
 		return 1;
 		}
-	
+
 	// Grab and show picture
+	Mat rawBGR;
+	Timer timer = Timer();
 	while (true) {
-		Mat rawBGR;
-		
+		t.reset();		
 		videostream.read(rawBGR);
+		t.update();
+		cout << t.getDelta() << "s - read videostream" << endl;
 		imshow("test", rawBGR);
+		t.update();
+		cout << t.getDelta() << "s - show image"
 
 		if (waitKey(10) == 27) {
 			break;
