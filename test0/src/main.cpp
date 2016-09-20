@@ -56,12 +56,13 @@ int main() {
 		sumImageShows =+ imageShows[i];
 		sumTotalTimes =+ totalTimes[i];
 		
-		cout << totalTimes[i] << endl;
+		cout << totalTimes[i]; << endl;
 		
 		avgVideoStreams = sumVideoStreams / 100.0;
 		avgImageShows = sumImageShows / 100.0;
 		avgTotalTimes = sumTotalTimes / 100.0;
 	}
+	cout << avgTotalTimes << endl;
 	cout << avgVideoStreams << "s - read videostream" << endl;
 	cout << avgImageShows << "s - show image" << endl;
 	cout << avgTotalTimes << "s - total time" << endl << endl;
