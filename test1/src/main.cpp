@@ -25,7 +25,7 @@ int main() {
 	Mat bgr;
 	Mat gray;
 	Mat blur;
-	Mat thres
+	Mat thresh
 	
 	vector<vector<Point>> cont;
 	vector<Vec4i> hierarchy;
@@ -58,7 +58,7 @@ int main() {
 		preProcesses[frameCounter] = timer.getDelta();
 		
 		// Show image on screen
-		imshow("test", dst);
+		imshow("test", thresh);
 		timer.update();
 		imageShows[frameCounter] = timer.getDelta();
 		
