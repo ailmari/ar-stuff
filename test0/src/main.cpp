@@ -21,12 +21,12 @@ int main() {
 	Mat rawBGR;
 	Timer timer = Timer();
 	while (true) {
-		t.reset();		
+		timer.reset();		
 		videostream.read(rawBGR);
-		t.update();
+		timer.update();
 		cout << t.getDelta() << "s - read videostream" << endl;
 		imshow("test", rawBGR);
-		t.update();
+		timer.update();
 		cout << t.getDelta() << "s - show image" << endl;
 
 		if (waitKey(10) == 27) {
