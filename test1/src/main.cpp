@@ -24,6 +24,7 @@ int main() {
 	int frameCounter = 0;
 	
 	double videoStreams[100];
+	double preProcesses[100];
 	double imageShows[100];
 	double totalTimes[100];
 	
@@ -36,6 +37,11 @@ int main() {
 		videoStream >> rawBGR;
 		timer.update();
 		videoStreams[frameCounter] = timer.getDelta();
+		
+		// Preprocess
+		cvtColor(grey, rawBGR, Size(7,7), 1.5, 1.5);
+		timer.update();
+		preProcesses[frameCounter] = timer.getDelta();
 		
 		// Show image on screen
 		imshow("test", rawBGR);
@@ -51,24 +57,30 @@ int main() {
 	
 	// Count execution times
 	double sumVideoStreams = 0;
+	double sumPreProcesses = 0;
 	double sumImageShows = 0;
 	double sumTotalTimes = 0;
+	
 	double avgVideoStreams;
+	double avgPreProcesses;
 	double avgImageShows;
 	double avgTotalTimes;
 	
 	for (int i = 0; i < 100; i++) {
 		sumVideoStreams += videoStreams[i];
+		sumPreProcesses += preProcesses[i];
 		sumImageShows += imageShows[i];
 		sumTotalTimes += totalTimes[i];
 		
 		avgVideoStreams = sumVideoStreams / 100.0;
+		avgPreProcesses = sumPreProcesses / 100.0;
 		avgImageShows = sumImageShows / 100.0;
 		avgTotalTimes = sumTotalTimes / 100.0;
 	}
 	
 	// Print execution times
 	cout << avgVideoStreams << "s - read videostream" << endl;
+	cout << avgPreProcesses << "s - preprocessing" << endl;
 	cout << avgImageShows << "s - show image" << endl;
 	cout << avgTotalTimes << "s - total time" << endl;
 	cout << 1.0 / avgTotalTimes << " fps" << endl << endl;
