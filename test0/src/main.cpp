@@ -48,9 +48,9 @@ int main() {
 	double sumVideoStreams = 0;
 	double sumImageShows = 0;
 	double sumTotalTimes = 0;
-	double avgVideoStreams
-	double avgImageShows
-	double avgTotalTimes
+	double avgVideoStreams;
+	double avgImageShows;
+	double avgTotalTimes;
 	for (int i = 0; i < 100; i++) {
 		sumVideoStreams =+ videoStreams[i];
 		sumImageShows =+ imageShows[i];
