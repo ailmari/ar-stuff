@@ -46,8 +46,8 @@ int main() {
 		videoStreams[frameCounter] = timer.getDelta();
 		
 		// Preprocess
-		cvtColor(bgr, gray, CV_BGR2GREY);
-		cvAdaptiveThreshold(gray, dst, 255, ADAPTIVE_THRESH_GAUSSIAN_C, CV_THRESH_BINARY, 3, 1);
+		cvtColor(bgr, gray, CV_BGR2GRAY);
+		adaptiveThreshold(gray, dst, 255, ADAPTIVE_THRESH_GAUSSIAN_C, CV_THRESH_BINARY, 3, 1);
 		timer.update();
 		preProcesses[frameCounter] = timer.getDelta();
 		
