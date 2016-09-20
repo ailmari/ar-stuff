@@ -23,7 +23,8 @@ int main() {
 		
 	// MAIN LOOP
 	Mat bgr;
-	Mat hsv;
+	Mat gray;
+	Mat dst;
 	
 	Timer timer = Timer();
 	
@@ -45,12 +46,13 @@ int main() {
 		videoStreams[frameCounter] = timer.getDelta();
 		
 		// Preprocess
-		//cvtColor(bgr, hsv, CV_BGR2HSV);
+		cvtColor(bgr, gray, CV_BGR2GREY);
+		cvAdaptiveThreshold(gray, dst, 255, ADAPTIVE_THRESH_GAUSSIAN_C, CV_THRESH_BINARY, 3, 1);
 		timer.update();
 		preProcesses[frameCounter] = timer.getDelta();
 		
 		// Show image on screen
-		imshow("test", bgr);
+		imshow("test", dst);
 		timer.update();
 		imageShows[frameCounter] = timer.getDelta();
 		
