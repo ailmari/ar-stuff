@@ -24,7 +24,7 @@ int main() {
 	while (true) {
 		timer.reset();
 		
-		&videostream >> &rawBGR;
+		videostream >> rawBGR;
 		timer.update();
 		cout << timer.getDelta() << "s - read videostream" << endl;
 		
