@@ -40,7 +40,7 @@ int main() {
 		videoStreams[frameCounter] = timer.getDelta();
 		
 		// Preprocess
-		cvtColor(rawBGR, grey CV_BGR2GRAY);
+		cvtColor(rawBGR, grey, CV_BGR2GRAY);
 		//GaussianBlur(grey, blurred, Size(7,7), 1.5, 1.5);
 		timer.update();
 		preProcesses[frameCounter] = timer.getDelta();
