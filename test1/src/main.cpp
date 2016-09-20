@@ -45,7 +45,7 @@ int main() {
 		videoStreams[frameCounter] = timer.getDelta();
 		
 		// Preprocess
-		cvtColor(bgr, hsv, CV_RGB2HSV);
+		cvtColor(bgr, hsv, CV_BGR2HSV);
 		timer.update();
 		preProcesses[frameCounter] = timer.getDelta();
 		
