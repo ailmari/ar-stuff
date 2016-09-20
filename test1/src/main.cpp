@@ -42,12 +42,12 @@ int main() {
 		videoStreams[frameCounter] = timer.getDelta();
 		
 		// Preprocess
-		//cvtColor(rawBGR, imgHSV, CV_BGR2HSV);
+		cvtColor(rawBGR, imgHSV, CV_BGR2HSV);
 		timer.update();
 		preProcesses[frameCounter] = timer.getDelta();
 		
 		// Show image on screen
-		imshow("test", rawBGR);
+		imshow("test", imgHSV);
 		timer.update();
 		imageShows[frameCounter] = timer.getDelta();
 		
