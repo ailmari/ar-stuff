@@ -50,7 +50,7 @@ int main() {
 		preProcesses[frameCounter] = timer.getDelta();
 		
 		// Show image on screen
-		imshow("test", hsv);
+		imshow("test", bgr);
 		timer.update();
 		imageShows[frameCounter] = timer.getDelta();
 		
