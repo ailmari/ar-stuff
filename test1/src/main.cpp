@@ -27,6 +27,8 @@ int main() {
 	Mat blur;
 	Mat thresh;
 	
+	RNG rnd(12345);
+	
 	vector<vector<Point> > cont;
 	vector<Vec4i> hierarchy;
 	
