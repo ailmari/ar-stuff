@@ -32,21 +32,19 @@ int main() {
 		videoStream >> rawBGR;
 		timer.update();
 		videoStreams[frameCounter] = timer.getDelta();
-		//cout << timer.getDelta() << "s - read videostream" << endl;
 		
 		imshow("test", rawBGR);
 		timer.update();
 		imageShows[frameCounter] = timer.getDelta();
-		//cout << timer.getDelta() << "s - show image" << endl;
 		
 		totalTimes[frameCounter] = timer.getTotal();
-		//cout << timer.getTotal() << "s - total time" << endl << endl;
 
 		if (waitKey(1) == 27) {
 			break;
 		}
 	}
 	
+	// Count execution times
 	double sumVideoStreams = 0;
 	double sumImageShows = 0;
 	double sumTotalTimes = 0;
@@ -59,5 +57,9 @@ int main() {
 		double avgImageShows = sumImageShows / 100;
 		double avgTotalTimes = sumTotalTimes / 100;
 	}
+	cout << avgVideoStreams << "s - read videostream" << endl;
+	cout << avgImageShows << "s - show image" << endl;
+	cout << avgTotalTimes << "s - total time" << endl << endl;
+	
 	return 0;
 }
