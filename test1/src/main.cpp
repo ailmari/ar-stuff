@@ -27,10 +27,10 @@ int main() {
 	Mat blur;
 	Mat thresh;
 	
-	RNG rnd(12345);
-	
 	vector<vector<Point> > cont;
 	vector<Vec4i> hierarchy;
+	
+	Scalar color = Scalar(0, 0, 255);
 	
 	Timer timer = Timer();
 	
@@ -57,7 +57,6 @@ int main() {
 		threshold(blur, thresh, 125, 255, CV_THRESH_BINARY | CV_THRESH_OTSU);
 		findContours(thresh, cont, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0,0));
 		for (int i = 0; i < cont.size(); i++) {
-			Scalar color = Scalar(rng.uniform(0, 255), rng.uniform(0, 255), rng.uniform(0, 255));
 			drawContours(bgr, cont, i, color, 2, 8, hierarchy, 0, Point());
 		}
 		timer.update();
