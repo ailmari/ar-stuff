@@ -1,4 +1,4 @@
-#include "timer.h"
+#include 'timer.h'
 
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -8,16 +8,15 @@ using namespace cv;
 using namespace std;
 
 int main() {
-
+	
 	// Open video stream
 	VideoCapture videoStream(0);
-	
 	if (!videoStream.isOpened()) {
-		cout << "Sorry, camera not found" << endl;
+		cout << 'Sorry, camera not found' << endl;
 		return 1;
 		}
-
-	// Grab and show picture
+		
+	// Main loop
 	Mat rawBGR;
 	Timer timer = Timer();
 	int frameCounter = 0;
@@ -33,7 +32,7 @@ int main() {
 		timer.update();
 		videoStreams[frameCounter] = timer.getDelta();
 		
-		imshow("test", rawBGR);
+		imshow('test', rawBGR);
 		timer.update();
 		imageShows[frameCounter] = timer.getDelta();
 		
@@ -56,16 +55,14 @@ int main() {
 		sumImageShows += imageShows[i];
 		sumTotalTimes += totalTimes[i];
 		
-		cout << totalTimes[i] << endl;
-		
 		avgVideoStreams = sumVideoStreams / 100.0;
 		avgImageShows = sumImageShows / 100.0;
 		avgTotalTimes = sumTotalTimes / 100.0;
 	}
-	cout << sumTotalTimes << endl;
-	cout << avgVideoStreams << "s - read videostream" << endl;
-	cout << avgImageShows << "s - show image" << endl;
-	cout << avgTotalTimes << "s - total time" << endl << endl;
+	cout << avgVideoStreams << 's - read videostream' << endl;
+	cout << avgImageShows << 's - show image' << endl;
+	cout << avgTotalTimes << 's - total time' << endl;
+	cout << 1.0 / avgTotalTimes << ' fps' << endl << endl;
 	
 	return 0;
 }
