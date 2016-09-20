@@ -16,10 +16,11 @@ int main() {
 		return 1;
 		}
 		
-	// Main loop
+	// MAIN LOOP
 	Mat rawBGR;
 	Mat grey;
 	Mat blurred;
+	Mat edges;
 	
 	Timer timer = Timer();
 	
@@ -43,11 +44,12 @@ int main() {
 		// Preprocess
 		cvtColor(rawBGR, grey, CV_BGR2GRAY);
 		GaussianBlur(grey, blurred, Size(7,7), 1.5, 1.5);
+		Canny(blurred, edges, 0, 30, 3);
 		timer.update();
 		preProcesses[frameCounter] = timer.getDelta();
 		
 		// Show image on screen
-		imshow("test", blurred);
+		imshow("test", edges);
 		timer.update();
 		imageShows[frameCounter] = timer.getDelta();
 		
