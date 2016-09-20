@@ -18,9 +18,7 @@ int main() {
 		
 	// MAIN LOOP
 	Mat rawBGR;
-	Mat grey;
-	Mat blurred;
-	Mat edges;
+	Mat imgHSV
 	
 	Timer timer = Timer();
 	
@@ -42,14 +40,12 @@ int main() {
 		videoStreams[frameCounter] = timer.getDelta();
 		
 		// Preprocess
-		cvtColor(rawBGR, grey, CV_BGR2GRAY);
-		GaussianBlur(grey, blurred, Size(7,7), 1.5, 1.5);
-		Canny(blurred, edges, 0, 30, 3);
+		cvtColor(rawBGR, imgHSV, CV_BGR2HSV);
 		timer.update();
 		preProcesses[frameCounter] = timer.getDelta();
 		
 		// Show image on screen
-		imshow("test", edges);
+		imshow("test", imgHSV);
 		timer.update();
 		imageShows[frameCounter] = timer.getDelta();
 		
