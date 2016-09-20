@@ -17,10 +17,13 @@ int main() {
 		}
 	videoStream.set(CV_CAP_PROP_FRAME_WIDTH, 320);
 	videoStream.set(CV_CAP_PROP_FRAME_HEIGHT, 240);
+	
+	// Set up window
+	namedWindow("test", 1);
 		
 	// MAIN LOOP
-	Mat rawBGR;
-	Mat imgHSV;
+	Mat bgr;
+	Mat hsv;
 	
 	Timer timer = Timer();
 	
@@ -37,17 +40,17 @@ int main() {
 		frameCounter = (frameCounter + 1) % 100;
 		
 		// Grab raw image from videostream
-		videoStream >> rawBGR;
+		videoStream >> bgr;
 		timer.update();
 		videoStreams[frameCounter] = timer.getDelta();
 		
 		// Preprocess
-		cvtColor(rawBGR, imgHSV, CV_BGR2HSV);
+		cvtColor(bgr, hsv, CV_RGB2HSV);
 		timer.update();
 		preProcesses[frameCounter] = timer.getDelta();
 		
 		// Show image on screen
-		imshow("test", imgHSV);
+		imshow("test", hsv);
 		timer.update();
 		imageShows[frameCounter] = timer.getDelta();
 		
