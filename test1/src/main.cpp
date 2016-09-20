@@ -47,7 +47,7 @@ int main() {
 		
 		// Preprocess
 		cvtColor(bgr, gray, CV_BGR2GRAY);
-		adaptiveThreshold(gray, dst, 255, ADAPTIVE_THRESH_GAUSSIAN_C, CV_THRESH_BINARY, 3, 1);
+		cvThreshold(gray, dst, 0, 255, CV_THRESH_BINARY | CV_THRESH_OTSU);
 		timer.update();
 		preProcesses[frameCounter] = timer.getDelta();
 		
