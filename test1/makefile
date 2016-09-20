@@ -1,6 +1,6 @@
 CXX = g++
 
-CFLAGS = -g -Wall -Wextra `pkg-config --cflags opencv`
+CFLAGS = -g `pkg-config --cflags opencv`
 LDFLAGS = `pkg-config --libs opencv`
 
 SRCS = src/*
