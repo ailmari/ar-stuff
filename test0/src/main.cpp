@@ -27,7 +27,7 @@ int main() {
 		cout << t.getDelta() << "s - read videostream" << endl;
 		imshow("test", rawBGR);
 		t.update();
-		cout << t.getDelta() << "s - show image"
+		cout << t.getDelta() << "s - show image" << endl;
 
 		if (waitKey(10) == 27) {
 			break;
