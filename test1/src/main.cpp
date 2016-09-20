@@ -18,6 +18,7 @@ int main() {
 		
 	// Main loop
 	Mat rawBGR;
+	Mat grey;
 	
 	Timer timer = Timer();
 	
@@ -39,7 +40,8 @@ int main() {
 		videoStreams[frameCounter] = timer.getDelta();
 		
 		// Preprocess
-		cvtColor(grey, rawBGR, Size(7,7), 1.5, 1.5);
+		cvtColor(rawBGR, grey CV_BGR2GRAY);
+		//GaussianBlur(grey, blurred, Size(7,7), 1.5, 1.5);
 		timer.update();
 		preProcesses[frameCounter] = timer.getDelta();
 		
