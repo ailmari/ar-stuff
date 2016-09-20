@@ -20,7 +20,6 @@ int main() {
 	// Grab and show picture
 	Mat rawBGR;
 	Timer timer = Timer();
-	float delay;
 	
 	while (true) {
 		timer.reset();
@@ -33,7 +32,7 @@ int main() {
 		timer.update();
 		cout << timer.getDelta() << "s - show image" << endl;
 		
-		cout << timer.getTotal() << "s - total time" endl << endl;
+		cout << timer.getTotal() << "s - total time" << endl << endl;
 
 		if (waitKey(10) == 27) {
 			break;
