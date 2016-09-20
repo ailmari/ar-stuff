@@ -18,7 +18,7 @@ int main() {
 		
 	// MAIN LOOP
 	Mat rawBGR;
-	Mat imgHSV
+	Mat imgHSV;
 	
 	Timer timer = Timer();
 	
