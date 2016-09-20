@@ -24,10 +24,10 @@ int main() {
 		timer.reset();		
 		videostream.read(rawBGR);
 		timer.update();
-		cout << t.getDelta() << "s - read videostream" << endl;
+		cout << timer.getDelta() << "s - read videostream" << endl;
 		imshow("test", rawBGR);
 		timer.update();
-		cout << t.getDelta() << "s - show image" << endl;
+		cout << timer.getDelta() << "s - show image" << endl;
 
 		if (waitKey(10) == 27) {
 			break;
