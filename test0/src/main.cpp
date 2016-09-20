@@ -27,7 +27,7 @@ int main() {
 	
 	while (true) {
 		timer.reset();
-		frameCounter = ++frameCounter % 100;
+		frameCounter = (frameCounter + 1) % 100;
 		
 		videoStream >> rawBGR;
 		timer.update();
@@ -38,7 +38,6 @@ int main() {
 		imageShows[frameCounter] = timer.getDelta();
 		
 		totalTimes[frameCounter] = timer.getTotal();
-		cout << timer.getTotal() << "s - total time" << endl << endl;
 
 		if (waitKey(1) == 27) {
 			break;
@@ -57,9 +56,11 @@ int main() {
 		sumImageShows =+ imageShows[i];
 		sumTotalTimes =+ totalTimes[i];
 		
-		avgVideoStreams = sumVideoStreams / 100;
-		avgImageShows = sumImageShows / 100;
-		avgTotalTimes = sumTotalTimes / 100;
+		cout << totalTimes[i] << endl;
+		
+		avgVideoStreams = sumVideoStreams / 100.0;
+		avgImageShows = sumImageShows / 100.0;
+		avgTotalTimes = sumTotalTimes / 100.0;
 	}
 	cout << avgVideoStreams << "s - read videostream" << endl;
 	cout << avgImageShows << "s - show image" << endl;
