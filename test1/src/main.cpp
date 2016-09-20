@@ -24,8 +24,9 @@ int main() {
 	// MAIN LOOP
 	Mat bgr;
 	Mat gray;
-	Mat dst;
 	Mat blur;
+	Mat thres
+	Mat cont;
 	
 	Timer timer = Timer();
 	
@@ -48,8 +49,9 @@ int main() {
 		
 		// Preprocess
 		cvtColor(bgr, gray, CV_BGR2GRAY);
-		GaussianBlur(gray, blur, Size(5,5), 0, 0);
-		threshold(blur, dst, 125, 255, CV_THRESH_BINARY | CV_THRESH_OTSU);
+		blur(gray, blur, Size(3,3));
+		threshold(blur, thresh, 125, 255, CV_THRESH_BINARY | CV_THRESH_OTSU);
+		findContours(thresh, cont, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0,0));
 		timer.update();
 		preProcesses[frameCounter] = timer.getDelta();
 		
