@@ -9,6 +9,7 @@ int main() {
 
 	// Open video stream
 	VideoCapture videostream(0);
+	
 	if (!videostream.isOpened()) {
 		cout << "Sorry, camera not found" << endl;
 		return 1;
@@ -17,8 +18,9 @@ int main() {
 	// Grab and show picture
 	while (true) {
 		Mat rawBGR;
+		
 		videostream.read(rawBGR);
-		imshow("test0", rawBGR);
+		imshow("test", rawBGR);
 
 		if (waitKey(10) == 27) {
 			break;
