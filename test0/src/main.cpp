@@ -55,9 +55,9 @@ int main() {
 		double sumImageShows =+ imageShows[i];
 		double sumTotalTimes =+ totalTimes[i];
 		
-		avgVideoStreams = sumVideoStreams / 100;
-		avgImageShows = sumImageShows / 100;
-		avgTotalTimes = sumTotalTimes / 100;
+		double avgVideoStreams = sumVideoStreams / 100;
+		double avgImageShows = sumImageShows / 100;
+		double avgTotalTimes = sumTotalTimes / 100;
 	}
 	return 0;
 }
