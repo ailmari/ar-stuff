@@ -48,14 +48,17 @@ int main() {
 	double sumVideoStreams = 0;
 	double sumImageShows = 0;
 	double sumTotalTimes = 0;
+	double avgVideoStreams
+	double avgImageShows
+	double avgTotalTimes
 	for (int i = 0; i < 100; i++) {
-		double sumVideoStreams =+ videoStreams[i];
-		double sumImageShows =+ imageShows[i];
-		double sumTotalTimes =+ totalTimes[i];
+		sumVideoStreams =+ videoStreams[i];
+		sumImageShows =+ imageShows[i];
+		sumTotalTimes =+ totalTimes[i];
 		
-		double avgVideoStreams = sumVideoStreams / 100;
-		double avgImageShows = sumImageShows / 100;
-		double avgTotalTimes = sumTotalTimes / 100;
+		avgVideoStreams = sumVideoStreams / 100;
+		avgImageShows = sumImageShows / 100;
+		avgTotalTimes = sumTotalTimes / 100;
 	}
 	cout << avgVideoStreams << "s - read videostream" << endl;
 	cout << avgImageShows << "s - show image" << endl;
