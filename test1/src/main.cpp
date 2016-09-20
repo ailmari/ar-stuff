@@ -25,9 +25,9 @@ int main() {
 	Mat bgr;
 	Mat gray;
 	Mat blur;
-	Mat thresh
+	Mat thresh;
 	
-	vector<vector<Point>> cont;
+	vector<vector<Point> > cont;
 	vector<Vec4i> hierarchy;
 	
 	Timer timer = Timer();
@@ -51,7 +51,7 @@ int main() {
 		
 		// Preprocess
 		cvtColor(bgr, gray, CV_BGR2GRAY);
-		blur(gray, blur, Size(3,3));
+		GaussianBlur(gray, blur, Size(3,3), 0, 0);
 		threshold(blur, thresh, 125, 255, CV_THRESH_BINARY | CV_THRESH_OTSU);
 		findContours(thresh, cont, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0,0));
 		timer.update();
