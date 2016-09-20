@@ -26,7 +26,9 @@ int main() {
 	Mat gray;
 	Mat blur;
 	Mat thres
-	Mat cont;
+	
+	vector<vector<Point>> cont;
+	vector<Vec4i> hierarchy;
 	
 	Timer timer = Timer();
 	
