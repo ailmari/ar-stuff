@@ -15,6 +15,8 @@ int main() {
 		cout << "Sorry, camera not found" << endl;
 		return 1;
 		}
+	videoStream.set(CV_CAP_PROP_FRAME_WIDTH, 320);
+	videoStream.set(CV_CAP_PROP_FRAME_HEIGHT, 240);
 		
 	// MAIN LOOP
 	Mat rawBGR;
@@ -40,12 +42,12 @@ int main() {
 		videoStreams[frameCounter] = timer.getDelta();
 		
 		// Preprocess
-		cvtColor(rawBGR, imgHSV, CV_BGR2HSV);
+		//cvtColor(rawBGR, imgHSV, CV_BGR2HSV);
 		timer.update();
 		preProcesses[frameCounter] = timer.getDelta();
 		
 		// Show image on screen
-		imshow("test", imgHSV);
+		imshow("test", rawBGR);
 		timer.update();
 		imageShows[frameCounter] = timer.getDelta();
 		
