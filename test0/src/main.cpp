@@ -8,7 +8,7 @@ int main() {
 
 	// Open video stream
 	VideoCapture videostream(0);
-	if (!vidcap.isOpened()) {
+	if (!videostream.isOpened()) {
 		cout << "Sorry, camera not found" << endl;
 		return 1;
 		}
