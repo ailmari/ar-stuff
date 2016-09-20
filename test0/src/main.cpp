@@ -28,6 +28,7 @@ int main() {
 	while (true) {
 		timer.reset();
 		frameCounter = ++frameCounter % 100;
+		cout << frameCounter << endl;
 		
 		videoStream >> rawBGR;
 		timer.update();
