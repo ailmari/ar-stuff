@@ -20,14 +20,20 @@ int main() {
 	// Grab and show picture
 	Mat rawBGR;
 	Timer timer = Timer();
+	float delay;
+	
 	while (true) {
-		timer.reset();		
+		timer.reset();
+		
 		videostream.read(rawBGR);
 		timer.update();
 		cout << timer.getDelta() << "s - read videostream" << endl;
+		
 		imshow("test", rawBGR);
 		timer.update();
 		cout << timer.getDelta() << "s - show image" << endl;
+		
+		cout << timer.getTotal() << "s - total time" endl << endl;
 
 		if (waitKey(10) == 27) {
 			break;
