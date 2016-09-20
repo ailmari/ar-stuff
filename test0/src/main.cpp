@@ -52,9 +52,9 @@ int main() {
 	double avgImageShows;
 	double avgTotalTimes;
 	for (int i = 0; i < 100; i++) {
-		sumVideoStreams =+ videoStreams[i];
-		sumImageShows =+ imageShows[i];
-		sumTotalTimes =+ totalTimes[i];
+		sumVideoStreams += videoStreams[i];
+		sumImageShows += imageShows[i];
+		sumTotalTimes += totalTimes[i];
 		
 		cout << totalTimes[i] << endl;
 		
@@ -62,7 +62,7 @@ int main() {
 		avgImageShows = sumImageShows / 100.0;
 		avgTotalTimes = sumTotalTimes / 100.0;
 	}
-	cout << avgTotalTimes << endl;
+	cout << sumTotalTimes << endl;
 	cout << avgVideoStreams << "s - read videostream" << endl;
 	cout << avgImageShows << "s - show image" << endl;
 	cout << avgTotalTimes << "s - total time" << endl << endl;
