@@ -28,7 +28,6 @@ int main() {
 	while (true) {
 		timer.reset();
 		frameCounter = ++frameCounter % 100;
-		cout << frameCounter << endl;
 		
 		videoStream >> rawBGR;
 		timer.update();
@@ -39,6 +38,7 @@ int main() {
 		imageShows[frameCounter] = timer.getDelta();
 		
 		totalTimes[frameCounter] = timer.getTotal();
+		cout << timer.getTotal() << "s - total time" << endl << endl;
 
 		if (waitKey(1) == 27) {
 			break;
