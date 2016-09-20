@@ -19,6 +19,7 @@ int main() {
 	// Main loop
 	Mat rawBGR;
 	Mat grey;
+	Mat blurred;
 	
 	Timer timer = Timer();
 	
@@ -41,12 +42,12 @@ int main() {
 		
 		// Preprocess
 		cvtColor(rawBGR, grey, CV_BGR2GRAY);
-		//GaussianBlur(grey, blurred, Size(7,7), 1.5, 1.5);
+		GaussianBlur(grey, blurred, Size(7,7), 1.5, 1.5);
 		timer.update();
 		preProcesses[frameCounter] = timer.getDelta();
 		
 		// Show image on screen
-		imshow("test", rawBGR);
+		imshow("test", blurred);
 		timer.update();
 		imageShows[frameCounter] = timer.getDelta();
 		
